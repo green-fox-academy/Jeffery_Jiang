@@ -8,9 +8,10 @@ namespace SortTheArray
         static void Main(string[] args)
         {
             int[] a = {4, 2, 1, 2, 6, 5};
-
-            Sort(a);
-            Console.WriteLine("Hello World!");
+            string[] b = {"asdad", "qwd", "basdasd"};
+           // Sort(a);
+            Sort(b);
+            //Console.WriteLine("Hello World!");
         }
 
         public static void Sort<T>(T[] array) where T : IComparable

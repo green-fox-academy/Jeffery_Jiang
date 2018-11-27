@@ -1,0 +1,65 @@
+﻿@using BankOfSimba.Models
+@model List<BankAccount>
+
+
+<head>
+    <title> Account Information </title>
+    <style>
+        table{ border: 1px solid green; background: antiquewhite}
+        th{ border: aqua; background: chartreuse; font-family: inherit}
+        td{ border: chocolate; background: greenyellow; font-family: fantasy}
+    </style>
+</head>
+<body>
+@if (Model.Count == 0)
+{
+    <p>Sorry the List is empty</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Animal Type</th>
+            <th> Discription</th>
+            <th> Operation</th>
+        </tr>
+        @foreach (var account in Model)
+        {
+        <tr>
+            <td>@(Model.IndexOf(account) + 1)</td>
+            @if (account.Name == "Simba")
+            {
+                <td style="color: red">@account.Name</td>
+                <td>@(account.Balance.ToString("0.00")) @account.Currency</td>
+                <td>@account.AnimalType</td>
+                <td> I am the King who is a @account.IsGoodGuy guy</td>
+
+
+            }
+            else
+            {
+                <td>@account.Name</td>
+                <td>@(account.Balance.ToString("0.00")) @account.Currency</td>
+                <td>@account.AnimalType</td>
+                <td> I am just a/an @account.AnimalType who is a @account.IsGoodGuy guy</td>
+            }
+                <!--? why  here cannot pass a object via query string-->
+            <td>
+                <form action="/raisebalance/@account.Name" method="post">
+                    <button type="submit"> Raise Balance</button>
+                </form>
+            </td>
+
+        </tr>
+        }
+
+
+    </table>
+}
+<form method="get" action="/">
+    <button type="submit"> Continue</button>
+</form>
+</body>
