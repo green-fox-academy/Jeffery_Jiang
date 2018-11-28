@@ -1,0 +1,21 @@
+﻿
+@model PriacticeDependencyInjection.Services.UtilityService
+
+
+<head> <title> Checking Email </title></head>
+
+<body>
+<form action="/useful/email/@Model.Email" method="post">
+    Your Email: <input type="text" name="Email" />
+    <button type="submit" value="@Model.Email"> Check</button>
+</form><br/>
+@if (Model.isValidEmail)
+{
+    <span style="background: gold"> @Model.Email is valid</span>
+}
+else
+{
+    <span style="background: darkred"> @Model.Email is not valid</span>
+}
+</body>
+
