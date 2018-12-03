@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model Fox
+
+<ul>
+    <li> <a href="/?name=@Model.Name">Information</a> </li>
+    <li><a href="/nutritionStore">Nutrition Store</a></li>
+    <li><a href="/trickcenter/@Model.Name">Trick Center</a></li>
+    <li><a href="/actionrecord/?name=@Model.Name"> Action Record</a></li>
+</ul>
+<h2> Hi I am @Model.Name I now have @Model.Tricks.Count tricks, they are:</h2>
+<ul>
+    @foreach (var trick in Model.Tricks)
+    {
+        <form action="/unlearntrick/?trick=@trick&name=@Model.Name" method="post">
+            <li>
+                <span> @trick           </span><button type="submit"> Unlearn </button>
+            </li>
+        </form>
+    }
+</ul>
+<form action="/trickcenter/@Model.Name" method="post" id="form1">
+    Food: <select name="trick" id="form1">
+        <option value="Playing Guitar"> Playing Guitarr</option>
+        <option value="Writing CSS code">Writing CSS code</option>
+        <option value="Computer Vision"> Computer Vision</option>
+        <option value="Cooking"> Cooking</option>
+        <option value="Coquetry"> Coquetry</option>
+        <option value="Playing Dota2"> Playing Dota2</option>
+        <option value="Playing CSGO">Playing CSGO</option>
+    </select>
+    <button type="submit"> Submit</button>
+
+</form>

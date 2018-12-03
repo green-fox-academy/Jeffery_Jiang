@@ -1,0 +1,10 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model IEnumerable<Fox>
+<h1> Welcom to Programmer Fox Club!</h1>
+
+<p>Please provide a name, so you can associate it to your pet!</p>
+<form asp-controller="Home" asp-action="EnterName" method="post">
+    Name: <input type="text" name="Name"/>
+    <button type="submit" > Go</button>
+</form>

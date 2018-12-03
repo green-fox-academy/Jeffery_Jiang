@@ -1,0 +1,24 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model Fox
+
+<ul>
+    <li> <a href="/?name=@Model.Name">Information</a> </li>
+    <li><a href="/nutritionStore/?name=@Model.Name"> NutritionStore</a></li>
+    <li><a href="/trickcenter/?name=@Model.Name"> Trick Centers</a></li>
+    <li><a href="/actionrecord/?name=@Model.Name"> Action Record</a></li>
+</ul>
+<h1> Here are some Record</h1>
+@if (Model != null)
+{
+    <ul>
+        @foreach (var action in Model.GetActionRecord())
+        {
+            <li> @action</li>
+        }
+    </ul>
+}esle{
+<p>No Record Yet</p>
+}
+<img src="img1.png" />
+

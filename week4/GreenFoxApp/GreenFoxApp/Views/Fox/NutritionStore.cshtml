@@ -1,0 +1,20 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model Fox
+
+<ul>
+    <li> <a href="/?name=@Model.Name">Information</a> </li>
+    <li><a href="/nutritionStore/?name=@Model.Name"> NutritionStore</a></li>
+    <li><a href="/trickcenter/?name=@Model.Name"> Trick Centers</a></li>
+    <li><a href="/actionrecord/?name=@Model.Name"> Action Record</a></li>
+</ul>
+<h2> Hi I am @Model.Name I currently living on @Model.Foods What will you feed me?</h2>
+<form action="/nutritionStore/@Model.Name"  method="post" id="form1">
+    Food: <select name="Food" id="form1">
+        <option value="Pizza and Water"> Pizza and Water</option>
+        <option value="Meat and Water"> Meat and Water</option>
+        <option value="Pizza and Lemonade"> Pizza and Lemonade</option>
+    </select>
+    <button type="submit"> Submit</button>
+
+</form>

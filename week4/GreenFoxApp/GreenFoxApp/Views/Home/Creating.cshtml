@@ -1,0 +1,13 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model Fox
+<h1> Here to create your pet</h1>
+
+<form asp-action="CreatPet" asp-controller="Home" method="post" >
+    Name: <input asp-for="Name"/><br />
+    Food:<input asp-for="Foods" /><br />
+    Tricks: <textarea name="Tricks" ></textarea>
+    <button type="submit"> Add</button>
+
+
+</form>

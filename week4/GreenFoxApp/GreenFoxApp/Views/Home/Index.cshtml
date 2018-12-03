@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GreenFoxApp.Models
+@model Fox
+<head>
+    <title> GreenFox App Homepage</title>
+</head>
+
+<body>
+    <ul>
+        <li><a> Information</a></li>
+        <li><a href="/nutritionStore/?name=@Model.Name"> NutritionStore</a></li>
+        <li><a href="/trickcenter/?name=@Model.Name"> Trick Centers</a></li>
+        <li><a href="/actionrecord/?name=@Model.Name"> Action Record</a></li>
+        <br />
+    </ul>
+    <img src="img1.png" />
+    @if (Model == null)
+{
+    <p> You have provided a name that has not been used before, add it as a new one!  </p>
+    <a href="creating"> Press here to add.</a>
+}
+else
+{
+    <p> This is Mr.@Model.Name Currently living on @Model.Foods. He knows @Model.Tricks.Count tricks.</p>
+    <h1>Know tricks</h1>
+    <ul>
+        @foreach (var trick in Model.Tricks)
+        {
+        <li>@trick</li>
+        }
+    </ul>
+    <a href="login"> log out</a>
+}
+</body>
