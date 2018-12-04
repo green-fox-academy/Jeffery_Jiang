@@ -1,0 +1,9 @@
+﻿American Community Survey data provide important information that cannot be found elsewhere. The federal government, as well as various businesses, researchers, and local governments use ACS data for planning and decision-making purposes. ACS data are used by public and business decision-makers to more clearly identify issues and opportunities and more effectively allocate scarce resources to address them.[25][26][27] In Fiscal Year 2008, 184 federal domestic assistance programs used ACS-related datasets to help guide the distribution of $416 billion, 29 percent of all federal assistance.[28]
+
+The American Community Survey is authorized by 13 U.S.C. § 141 and 13 U.S.C. § 193.[29] Federal courts have held that the long form is constitutional.
+
+In 2000, the U.S. District Court for the Southern District of Texas ruled that the 2000 Census and the 2000 Census questions did not violate the Fourth Amendment or other constitutional provisions as alleged by plaintiffs. The court said responses to census questions are not a violation of a citizen's right to privacy or speech.[30]
+
+The court's decision was later affirmed by the U.S. Circuit Court of Appeals for the Fifth Circuit, and the U.S. Supreme Court denied petition for writ of certiorari.[31] Additionally, a number of other courts, including the U.S. Supreme Court, have consistently held through the years that the census and the questions in the census are authorized by both the Constitution and statute.[32]
+
+In 2002, the GAO confirmed that the Census Bureau has authority to conduct the survey and "require responses from the public." All individual American Community Survey responses are kept private and are used (along with other ACS responses) to create estimates of demographic characteristics for various geographies. Because of data swapping techniques to ensure confidentiality, it is impossible to figure out how individual people responded based on data from published ACS estimates.[33]
