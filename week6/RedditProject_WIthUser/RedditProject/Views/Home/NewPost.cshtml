@@ -1,0 +1,15 @@
+﻿
+
+<h2>NewPost</h2>
+
+<h1 align="center">Submit a new post</h1>
+<div align="center">
+<form asp-action="AddPost" asp-controller="Home" method="post">
+    <label>Title:</label>
+    <input  type="text" name="Title"/><br/>
+    <label>URL:</label>
+    <input type="text" name="Url"/><br/>
+    <input type="hidden" name="UserId" value="@ViewBag.userId"/>
+    <button type="submit"> Submit</button>
+</form>
+</div>

@@ -1,0 +1,58 @@
+﻿
+@model RedditProject.ViewModels.UserPostsViewModel
+
+<head>
+    <title> Redit Project</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding-right: 50px;
+            padding-left: 30px;
+            padding-bottom: 15px;
+        }
+
+        PostContent {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 15px; font-size: 20px">
+        <a asp-route-userId="@Model.User.UserId" asp-action="NewPost" > Submit new post</a>
+    </div>
+    <div align="center" style="padding: 30px">
+        <h1>Welcome @Model.User.UserName, Your Trending Post</h1>
+    </div>
+
+
+
+    <div id="PostContent">
+
+        <table>
+            @foreach (var post in @Model.PostList)
+            {
+                <form asp-controller="Home" asp-action="Operation" method="post">
+                    <tr>
+
+                        <td>@post.Frequency</td>
+                        <td>
+                            <input type="hidden" name="id" value="@post.Id" />
+                            <input type="hidden" name="userName" value="@Model.User.UserName"/>
+                            <button style="background-color: crimson" type="submit" name="op" value="plus">+</button>
+                            <button style="background-color: chartreuse" type="submit" name="op" value="minus">- </button>
+                        </td>
+                        <td><a href="@post.Url"> @post.Title</a></td>
+                        <td><span style="background-color: bisque">Last Update:</span>@post.Date</td>
+                    </tr>
+                </form>
+
+            }
+        </table>
+
+    </div>
+
+
+</body>

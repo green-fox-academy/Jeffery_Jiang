@@ -78,7 +78,7 @@ namespace GreenFoxApp.Repo
         public void RecordAction(string action,string name)
         {
             var fox = Find(name);
-            if (fox.ActionRecord) == null)
+            if (fox.ActionRecord == null)
             {
                 fox.ActionRecord = new List<string>()
                 {

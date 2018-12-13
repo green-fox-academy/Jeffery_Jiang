@@ -11,7 +11,16 @@ namespace LinqPractice
     {
         static void Main(string[] args)
         {
-            /*
+            #region SomeTest
+
+
+
+
+            string someString = "Jeffery Jiang's Book!! is 123ad!";
+            var someArray = someString.ToCharArray();
+
+            var result = someArray.Where(r => !char.IsPunctuation(r));
+            #endregion
             #region Exercise1
             int[] n = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
 
@@ -112,7 +121,7 @@ namespace LinqPractice
             string filePath = "TextFile1.txt";
             var textContainer = File.ReadAllLines(filePath);
             List<string> stringList = new List<string>();
-          
+
 
             foreach (var s in textContainer)
             {
@@ -122,7 +131,8 @@ namespace LinqPractice
                 {
                     var tempLinqCollection = string.Join("", s1
                         .ToCharArray()
-                        .Where(r => r >= 65 && r <= 90 || r >= 97 && r <= 122)
+                       // .Where(r=> !char.IsPunctuation(r))
+                        .Where(r => r >= 'a' && r <= 'z' || r >= 'A' && r <= 'Z')
                         .ToArray());
 
 
@@ -132,7 +142,7 @@ namespace LinqPractice
             }
 
             var n10Output = stringList
-                .Where(r=>r.Length>0)  //to ignore "". 
+                .Where(r => r.Length > 0)  //to ignore "". 
                 .GroupBy(r => r)
                 .OrderByDescending(r => r.Count());
             foreach (var VARIABLE in n10Output)
@@ -140,7 +150,7 @@ namespace LinqPractice
                 Console.WriteLine($"{VARIABLE.Key} : {VARIABLE.Count()} times");
             }
             #endregion
-*/
+
             #region Ex12 HeaviestMan
 
             string filePath2 = "swcharacters.txt";

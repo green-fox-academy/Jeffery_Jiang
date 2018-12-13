@@ -1,0 +1,26 @@
+﻿@using EntityFramework.Models
+@model IEnumerable<Todo>
+<head>
+    <style>
+        td{ border: 1px solid black;}
+    </style>
+</head>
+<h1> Here are Todos</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Urgent</th>
+    </tr>
+    @foreach (var todo in Model)
+    {
+        <tr>
+            <td>@todo.Id</td>
+            <td>@todo.Title</td>
+            <td>@todo.Isdone</td>
+            <td>@todo.IsUrgent</td>
+        </tr>
+    }
+</table>
