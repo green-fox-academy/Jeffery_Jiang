@@ -1,0 +1,63 @@
+﻿@model WareHouseApp.ViewModels.HomeIndexViewModel
+
+
+<head>
+    <style>
+        .tableContent {
+            padding-right: 50px
+        }
+    </style>
+</head>
+
+<h1>List of goods</h1>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Stock</th>
+        <th> </th>
+    </tr>
+    @foreach (var good in Model.Goods)
+    {
+        <tr>
+            <td class="tableContent">@good.Name</td>
+            <td class="tableContent">@good.Stock</td>
+            <td>
+                <form asp-controller="Home" asp-action="AddItemToBasket" asp-route-goodId="@good.GoodId" method="post">
+                    <input type="number" name="quantity" min="0" max="@good.Stock" style="width: 50px"/>
+                    <button type="submit" style="background-color: red">Add to basket</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <h1> My Basket</h1>
+    <table>
+        <tr>
+            <th>Name:</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+        @if (Model.BasketItems.Count() == 0)
+        {
+            <P>You have no item in your basket yet.</P>
+        }
+        @foreach (var basketGood in Model.BasketItems)
+        {
+            <tr>
+                <td style="padding-right: 100px">@basketGood.Name</td>
+                <td>@basketGood.Quantity</td>
+                
+            </tr>
+        }
+    </table>
+</div>
+
+<form asp-controller="Home" asp-action="MakeNewOrder" method="post">
+    <button type="submit" style="background-color: yellow">Make new order</button>
+</form>
+<form asp-controller="Home" asp-action="ClearBasket" method="post">
+    <button type="submit" style="background-color: red">Clear basket</button>
+</form>
