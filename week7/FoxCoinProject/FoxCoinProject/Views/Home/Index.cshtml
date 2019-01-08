@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UserAccount>
+
+
+<body>
+    <select form="dropdown" name="userId">
+        <option value="">Choose a User</option>
+        @foreach (var user in Model)
+        {
+            <option value="@user.UserId">@user.Name</option>
+        }
+    </select>
+    <form asp-action="FoxCoinPage" id="dropdown" method="get">
+        <input type="submit" value="Switch" />
+    </form>
+    <h1>Account List</h1>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Balance</th>
+        </tr>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <th>@account.Name</th>
+                <th>@account.Balance</th>
+            </tr>
+        }
+
+    </table>
+
+</body>

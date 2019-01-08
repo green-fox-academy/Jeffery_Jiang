@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "CreateRecipe";
+}
+<head>
+    <style>
+        
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<h2>CreateRecipe</h2>
+<form asp-controller="Create" asp-action="Create" id="create_recipe">
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td><input class="text_area" type="text" name="Name"/></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><input class="text_area" type="text" name="Description" /></td>
+        </tr>
+        <tr>
+            <th>Ingredients</th>
+        </tr>
+        <tr>
+            <td><textarea class="text_area" name="ingredientText" form="create_recipe" placeholder="Put each ingredient on its own line."></textarea></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+</form>
+

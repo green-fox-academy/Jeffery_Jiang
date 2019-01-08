@@ -1,0 +1,15 @@
+﻿
+@model Recipe
+
+<div>
+    <form asp-controller="Home" asp-action="EditRecip" id="EditForm">
+        <h3>Name</h3>
+        <p><input type="text" value="@Model.Name" name="Name"/></p>
+        <h3>Description</h3>
+        <p><input type="text" value="@Model.Description" name="Description"/></p>
+        <h3>Ingredients</h3>
+        <p><textarea form="EditForm" name="ingredientText">@ViewBag.Igredients</textarea></p>
+        <input type="hidden" value="@Model.RecipeId" name="id"/>
+        <button type="submit">Update</button>
+    </form>
+</div>

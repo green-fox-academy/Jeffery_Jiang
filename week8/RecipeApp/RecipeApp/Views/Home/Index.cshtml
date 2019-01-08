@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Recipe>
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<h1> Recipe Collection</h1>
+
+
+@foreach (var recipe in Model)
+{
+    <h1> @recipe.Name</h1>
+    <div class="content">
+        <p>@recipe.Description</p>
+        <p><ul>
+            @foreach (var element in recipe.Ingredients)
+            {
+                <li>@element.Amount @element.Unit @element.Name</li>
+            }
+        </ul></p>
+    </div>
+    <a asp-action="EditPage" asp-route-id="@recipe.RecipeId"> Edit this recipe</a>
+}
+

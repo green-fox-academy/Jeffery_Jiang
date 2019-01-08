@@ -1,0 +1,60 @@
+﻿
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IPagedList<Post>
+
+<head>
+    <title> Redit Project</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding-right: 50px;
+            padding-left: 30px;
+            padding-bottom: 15px;
+        }
+
+        PostContent {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 15px; font-size: 20px">
+        <a asp-action="NewPost"> Submit new post</a>
+    </div>
+    <div align="center" style="padding: 30px">
+        <h1> Trending Post</h1>
+    </div>
+
+
+
+    <div id="PostContent">
+
+        <table>
+            @foreach (var post in @Model)
+            {
+                <form asp-controller="Home" asp-action="Operation" method="post">
+                    <tr>
+
+                        <td>@post.Frequency</td>
+                        <td>
+                            <input type="hidden" name="id" value="@post.Id" />
+                            <button style="background-color: crimson" type="submit" name="op" value="plus">+</button>
+                            <button style="background-color: chartreuse" type="submit" name="op" value="minus">- </button>
+                        </td>
+                        <td><a href="@post.Url"> @post.Title</a></td>
+                        <td><span style="background-color: bisque">Last Update:</span>@post.Date</td>
+                    </tr>
+                </form>
+
+            }
+        </table>
+
+    </div>
+<p> Page of @Model.PageNumber of @Model.PageCount</p>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+</body>
